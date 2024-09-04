@@ -16,3 +16,12 @@ export const HeaderC = styled.div`
     width: 100vh;
   }
 `;
+export const ButtonMenu = styled.button`
+  display: none;
+  @media (max-width: 769px) {
+    border: none;
+    display: flex;
+    background-color: #36393c;
+    padding-right: 10vh;
+  }
+`;

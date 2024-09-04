@@ -1,22 +1,42 @@
 import styled from "styled-components";
-
-export const BurgerContainer = styled.div`
-  cursor: pointer;
+export const Container = styled.div`
   display: flex;
-  justify-content: center;
   flex-direction: column;
-  gap: 7px;
-  height: 40px;
-  width: 52px;
+  padding-top: 20vh;
+  align-items: center;
 
-  @media (min-width: 769px) {
-    display: none;
+  @media (max-width: 769px) {
+    width: 100vh;
+    display: flex;
+    font-size: 38px;
+    background-color: #36393c;
+    height: 200vh;
   }
 `;
 
-export const BurgerPiece = styled.div`
-  width: 52px;
-  height: 6px;
-  border-radius: 2px;
-  background-color: #b57c00;
+export const StyledButton = styled.button`
+  cursor: pointer;
+  display: flex;
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  @media (max-width: 789px) {
+    display: none;
+  }
+`;
+export const HeaderC = styled.div`
+  width: 100%;
+  @media (max-width: 769px) {
+    width: 100vh;
+  }
+`;
+export const ButtonMenu = styled.button`
+  display: none;
+  @media (max-width: 769px) {
+    border: none;
+    display: flex;
+    background-color: #36393c;
+    padding-right: 10vh;
+    padding-top: 2vh;
+  }
 `;

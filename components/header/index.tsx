@@ -2,14 +2,16 @@ import { useLogout } from "@/lib/hooks";
 import { useState } from "react";
 import { useRouter } from "next/router";
 import { useToggleSearchBar, useIsAuthenticated } from "@/lib/hooks";
-import { NavMenu } from "../nav-menu";
+//import { NavMenu } from "../nav-menu";
 import { Menu } from "../menu";
-import { StyledButton, HeaderC } from "./styled";
+import { StyledButton, HeaderC, ButtonMenu } from "./styled";
 import Logito from "@/ui/icons/logoo.svg";
+import Hamburguesa from "@/ui/icons/hamburguesa.svg";
 export function Header() {
   const [navMenuStatus, setNavMenuStatus]: any = useState("");
   const router = useRouter();
   const userInformation: any = useIsAuthenticated();
+
   const setLogout = useLogout();
   const isLogged = userInformation ? true : false;
   const { searchBarStatus, updateSearchBarStatus } = useToggleSearchBar();
@@ -32,6 +34,7 @@ export function Header() {
         : setNavMenuStatus("");
     }
     updateSearchBarStatus(!searchBarStatus);
+    console.log("Se ha presionado el botón de menú");
   }
 
   return (
@@ -54,7 +57,23 @@ export function Header() {
       </div>
 
       <div>
-        <Menu handleClick={handleMenuToggle} />
+        <div>
+          <ButtonMenu
+            style={{
+              width: "40px",
+              height: "40px",
+            }}
+          >
+            <a href="/menu">
+              <Hamburguesa
+                style={{
+                  width: "40px",
+                  height: "40px",
+                }}
+              />
+            </a>
+          </ButtonMenu>
+        </div>
 
         {isLogged ? (
           <StyledButton
@@ -83,11 +102,6 @@ export function Header() {
             Ingresar
           </StyledButton>
         )}
-        <NavMenu
-          isLogged={isLogged}
-          user={userInformation.email}
-          isOpen={navMenuStatus}
-        />
       </div>
     </HeaderC>
   );
