@@ -32,7 +32,7 @@ export function Footer() {
         <h2 style={{ color: "#eaa928", textDecoration: "none" }}>Redes</h2>
         <div>
           <a
-            href="https://www.linkedin.com/in/dylan-pilsner"
+            href="https://www.linkedin.com"
             target="_blank"
             style={{ color: "#eaa928", textDecoration: "none" }}
           >
@@ -42,7 +42,7 @@ export function Footer() {
         </div>
         <div>
           <a
-            href="https://github.com/dylanpilsner"
+            href="https://github.com"
             target="_blank"
             style={{ color: "#eaa928", textDecoration: "none" }}
           >
